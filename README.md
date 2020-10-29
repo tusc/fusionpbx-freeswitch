@@ -62,6 +62,11 @@ This section goes over the process of configuring an endpoint in FusionPBX: http
 This image is based on FreeSwitch 1.10.3 and FusionPBX 4.4.1 using the latest packages from an Alpine docker container. Not all features of FreeSwitch are included with this build.
 For now, music on hold is not working and I'm in the process of troubleshooting the issue.
 
+## Building
+Build on your UDM or build on another device using buildx and targeting arm64
+```
+docker buildx build --platform linux/arm64 -t fusionpbx-freeswitch:latest .
+```
 # Uninstalling
 
 To remove the docker instance and image you'll need to type the following at the UDM ssh prompt:

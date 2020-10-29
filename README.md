@@ -24,10 +24,14 @@ mkdir /mnt/data/fusionpbx
 In order to install this image you will need to log into the UDM via ssh and type the following command:
 
 ```
-podman run --name fusionpbx --net=host -v /etc/localtime:/etc/localtime:ro -v /mnt/data/fusionpbx:/data -e PGPASSWORD=passw0rd  tusc/fusionpbx-freeswitch
+podman run -d --name fusionpbx --net=host -v /etc/localtime:/etc/localtime:ro -v /mnt/data/fusionpbx:/data -e PGPASSWORD=passw0rd  tusc/fusionpbx-freeswitch
 ```
 This will download the latest image to the UDM and start the container. 
-The PGPASSWORD is for the PostgreSQL account. If you change this you'll need to update the password during the FusionPBX setup. You should see output from podman such as below:
+The PGPASSWORD is for the PostgreSQL account. If you change this you'll need to update the password during the FusionPBX setup. Podman should return right away with a container id. You can monitor the progress of the container by typing the following:
+```
+podman logs fusionpbx
+```
+You should see output from podman such as below:
 
 ![Blockgroup](/pics/pic1.png)
 

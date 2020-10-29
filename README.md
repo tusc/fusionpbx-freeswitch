@@ -65,7 +65,7 @@ For now, music on hold is not working and I'm in the process of troubleshooting 
 ## Building
 Build on your UDM or build on another device using buildx and targeting arm64
 ```
-docker buildx build --platform linux/arm64 -t fusionpbx-freeswitch:latest .
+docker buildx build --platform linux/arm64/v8 -t fusionpbx-freeswitch:latest .
 ```
 # Uninstalling
 
